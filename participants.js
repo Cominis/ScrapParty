@@ -5,22 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
             {active: true}, 
             function(tab) {  
             findParticipants(function(participants) {
-                const myObj = JSON.stringify(participants)
-                window.open('https://www.google.com/search?q=' + myObj, 'blank'); 
-                console.log("Found %i divs", myObj);
+                window.open('https://www.google.com/search?q=' + JSON.stringify(participants), 'blank'); 
+                console.log("Found %i divs", JSON.stringify(participants));
             });
              
         });
     }, false);  
 }, false);
 
-//var myQuery = "document.querySelector('div[role=\"listitem\"]')"
-//var myQuery = "document.querySelector('div[data-self-name=\"You\"]')"
-var myQuery = "document.querySelectorAll('div[data-self-name=\"You\"]')"
-
 function findParticipants(callback) {
     chrome.tabs.executeScript(
-        {allFrames: true, code: myQuery}, 
+        {allFrames: true, file: "selector.js"}, 
         function(result) {
         if (chrome.runtime.lastError) {
             window.open('https://www.google.com/search?q=' + chrome.runtime.lastError, 'blank');
