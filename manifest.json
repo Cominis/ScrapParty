@@ -1,11 +1,11 @@
-{  
-    "manifest_version": 2,  
-    "name": "Lost and found",  
-    "description": "This extension is designed for Demo Perpose",  
-    "version": "1.0",  
-    "browser_action": {  
-        "default_icon": "images/logo.png",  
-        "default_popup": "index.html"  
-    },  
-    "permissions": ["activeTab", "tabs"]  
+{
+  "manifest_version": 2,
+  "name": "Lost and found",
+  "description": "This extension is designed for Demo Perpose",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_popup": "index.html"
+  },
+  "permissions": ["activeTab", "tabs"]
 }
