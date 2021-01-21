@@ -2,17 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
   var button = document.getElementById("missingPartyButton");
 
   button.addEventListener("click", () =>
-    chrome.tabs.query({ active: true }, (tab) => activeTabCallback(tab))
+    chrome.tabs.query({ currentWindow: true, active: true }, (tabs) =>
+      activeTabCallback(tabs)
+    )
   );
 });
 
-let activeTabCallback = (tab) => {
+let activeTabCallback = (tabs) => {
   findParticipants((participants) => {
     const list = document.getElementById("missingPartyList");
     list.innerHTML = "";
 
     const msg = document.getElementById("errorMessage");
     msg.style.display = "none";
+
+    const token = getGoogleMeetToken(tabs[0].url);
 
     if (
       typeof participants == "undefined" ||
@@ -28,6 +32,11 @@ let activeTabCallback = (tab) => {
       }
     }
   });
+};
+
+let getGoogleMeetToken = (url) => {
+  const matches = url.match("\\b[a-zA-Z]{3}-[a-zA-Z]{4}-[a-zA-Z]{3}\\b");
+  return matches[0];
 };
 
 let findParticipants = (callback) => {

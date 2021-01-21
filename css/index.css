@@ -13,17 +13,27 @@ body {
   display: inline-block;
   font-size: medium;
   transition-duration: 0.2s;
-  border-radius: 2px;
+  border-radius: 4px;
+}
+
+.button:focus {
+  outline: 0;
 }
 
 .button:hover {
   background-color: #008cba;
 }
 
+.button:hover:active {
+  background-color: #014d66;
+}
 ul.list {
   list-style-type: none;
-  padding-left: 0;
+  padding-left: 16px;
   text-align: left;
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 ul.list > li {
