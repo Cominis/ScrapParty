@@ -24,6 +24,10 @@ body {
   background-color: #008cba;
 }
 
+.button:disabled {
+  background-color: #5a5a5a;
+}
+
 .button:hover:active {
   background-color: #014d66;
 }
@@ -53,4 +57,25 @@ ul.list > li {
 .block {
   display: inline-block;
   text-align: center;
+}
+
+.loader {
+  display: none;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #008cba; /* Blue */
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  padding: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

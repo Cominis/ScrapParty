@@ -12,7 +12,12 @@
     "default_title": "Lost and found",
     "default_popup": "index.html"
   },
-  "permissions": ["activeTab", "tabs"],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "https://lost-and-found-node.herokuapp.com/*",
+    "https://jsonplaceholder.typicode.com/posts"
+  ],
   "icons": {
     "16": "images/logo.png",
     "48": "images/logo.png",
