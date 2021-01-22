@@ -15,8 +15,7 @@
   "permissions": [
     "activeTab",
     "tabs",
-    "https://lost-and-found-node.herokuapp.com/*",
-    "https://jsonplaceholder.typicode.com/posts"
+    "https://lost-and-found-node.herokuapp.com/*"
   ],
   "icons": {
     "16": "images/logo.png",
