@@ -1,6 +1,7 @@
 body {
   min-width: 248px;
   text-align: center;
+  padding-top: 16px;
 }
 
 .button {
